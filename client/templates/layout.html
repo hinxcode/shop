@@ -1,17 +1,18 @@
-<template name="layout">
-  <!-- to use, implement Template.layout.replaces "coreLayout" -->
-  <nav class="reaction-navigation-header">{{> Template.dynamic template=layoutHeader}}</nav>
+<template name="shopLayout">
+  <nav class="reaction-header">{{> Template.dynamic template=layoutHeader}}</nav>
   <nav class="reaction-cart-drawer">{{> cartDrawer}}</nav>
   <div class="reaction-dashboard-drawer">{{> Template.dynamic template=dashboard}}</div>
-  {{#unless hasPermission 'admin'}}
-    {{> carousel}}
-  {{/unless}}
   <main role="main" id="main">
-    <div class="container-fluid">
+    <div class="container-fluid content-container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3"></div>
+        <div class="col-xs-12 col-sm-8 col-md-9">
+          {{> carousel}}
+        </div>
+      </div>
       <span id="layout-alerts">{{> inlineAlerts}}</span>
       {{> Template.dynamic template=template}}
     </div>
-
     <footer class="reaction-navigation-footer">{{> Template.dynamic template=layoutFooter}}</footer>
   </main>
 </template>

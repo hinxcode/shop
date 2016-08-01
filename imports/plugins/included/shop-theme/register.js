@@ -2,6 +2,6 @@
 import { Reaction } from "/server/api";
 
 Reaction.registerPackage({
-  label: "Reaction Default Theme",
-  name: "reaction-default-theme"
+  label: "Reaction Shop Custom Theme",
+  name: "reaction-shop-theme"
 });

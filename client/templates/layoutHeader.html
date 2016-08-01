@@ -1,0 +1,34 @@
+<template name="shopLayoutHeader">
+  <div class="container-fluid content-container">
+    <div class="nav" role="navigation">
+      <div class="row">
+        {{> CoreNavigationBar coreNavProps}}
+      </div>
+      <div class="row">
+        {{!-- {{> tagNav tagNavProps}} --}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="list-group">
+          <button type="button" class="list-group-item">Cate A</button>
+          <button type="button" class="list-group-item">Cate B</button>
+          <button type="button" class="list-group-item">Cate C</button>
+          <button type="button" class="list-group-item">Cate D</button>
+          <button type="button" class="list-group-item">Cate E</button>
+          <button type="button" class="list-group-item">Cate F</button>
+          <button type="button" class="list-group-item">Cate G</button>
+          <button type="button" class="list-group-item">Cate H</button>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-9">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
