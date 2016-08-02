@@ -1,7 +1,7 @@
 # used for CircleCI curl tests
 
 reaction:
-  image: reactioncommerce/reaction:latest
+  image: hinx/shop:latest
   links:
     - mongo
   ports:
