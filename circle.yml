@@ -15,8 +15,8 @@ dependencies:
     - .reaction/scripts/clone-packages.sh
     - .reaction/docker/scripts/plugin-loader.sh
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
-    - docker build -t reactioncommerce/reaction:latest .
-    - mkdir -p ~/docker; docker save reactioncommerce/reaction:latest > ~/docker/image.tar
+    - docker build -t hinx/shop:latest .
+    - mkdir -p ~/docker; docker save hinx/shop:latest > ~/docker/image.tar
 
 test:
   override:
@@ -30,15 +30,15 @@ deployment:
   prequel:
     branch: development
     commands:
-      - docker tag reactioncommerce/reaction:latest reactioncommerce/prequel:latest
-      - docker tag reactioncommerce/reaction:latest reactioncommerce/prequel:$CIRCLE_BUILD_NUM
+      - docker tag hinx/shop:latest hinx/shop-prequel:latest
+      - docker tag hinx/shop:latest hinx/shop-prequel:$CIRCLE_BUILD_NUM
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push reactioncommerce/prequel:$CIRCLE_BUILD_NUM
-      - docker push reactioncommerce/prequel:latest
+      - docker push hinx/shop-prequel:$CIRCLE_BUILD_NUM
+      - docker push hinx/shop-prequel:latest
   release:
     branch: master
     commands:
-      - docker tag reactioncommerce/reaction:latest  reactioncommerce/reaction:$CIRCLE_BUILD_NUM
+      - docker tag hinx/shop:latest hinx/shop:$CIRCLE_BUILD_NUM
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push reactioncommerce/reaction:$CIRCLE_BUILD_NUM
-      - docker push reactioncommerce/reaction:latest
+      - docker push hinx/shop:$CIRCLE_BUILD_NUM
+      - docker push hinx/shop:latest
