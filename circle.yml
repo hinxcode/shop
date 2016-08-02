@@ -11,7 +11,7 @@ dependencies:
     - "~/.meteor"
     - "~/docker"
   override:
-    - cd $HOME/reaction
+    - cd $HOME/shop
     - .reaction/scripts/clone-packages.sh
     - .reaction/docker/scripts/plugin-loader.sh
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
@@ -20,7 +20,7 @@ dependencies:
 
 test:
   override:
-    - cd $HOME/reaction
+    - cd $HOME/shop
     - meteor npm install
     - SERVER_TEST_REPORTER="dot" meteor test --once --full-app --headless --driver-package dispatch:mocha
     - docker-compose -f .reaction/docker/docker-compose.test.yml up -d; sleep 10
