@@ -3,9 +3,9 @@
   "MONGO_URL": "",
   "MAIL_URL": "",
   "reaction": {
-    "REACTION_USER": "",
-    "REACTION_AUTH": "",
-    "REACTION_EMAIL": ""
+    "REACTION_USER": "Administrator",
+    "REACTION_AUTH": "password",
+    "REACTION_EMAIL": "admin@mail.com"
   },
   "isDebug": "info",
   "public": {}
